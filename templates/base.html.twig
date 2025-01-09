@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Ma TODO App{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <a href="/task/list">Liste des tâches</a> |
+        <a href="/task/add">Ajouter une tâche</a>
+    </nav>
+    <hr/>
+    {% block content %}{% endblock %}
+</body>
+</html>

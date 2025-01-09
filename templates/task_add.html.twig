@@ -1,0 +1,24 @@
+<h1>Ajouter une nouvelle tâche</h1>
+<form method="POST" action="/projet-php/public/task/add">
+    <label for="title">Titre :</label>
+    <input type="text" id="title" name="title" required>
+
+    <label for="priority">Priorité :</label>
+    <select id="priority" name="priority">
+        <option value="low">Basse</option>
+        <option value="medium" selected>Moyenne</option>
+        <option value="high">Haute</option>
+    </select>
+
+    <label for="recurrence">Récurrence :</label>
+    <select id="recurrence" name="recurrence">
+        <option value="none">Aucune</option>
+        <option value="daily">Quotidienne</option>
+        <option value="weekly">Hebdomadaire</option>
+        <option value="monthly">Mensuelle</option>
+    </select>
+
+    <button type="submit">Ajouter</button>
+</form>
+<a href="/projet-php/public/task/list">Retour à la liste</a>
+

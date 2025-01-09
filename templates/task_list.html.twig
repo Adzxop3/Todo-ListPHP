@@ -1,0 +1,22 @@
+<h1>Mes Tâches</h1>
+<ul>
+    {% for task in tasks %}
+        <li>
+            {{ task.title }} - Priorité : {{ task.priority }}
+            {% if task.completed %}
+                <span>(Terminée)</span>
+                <a href="/projet-php/public/task/toggleCompletion?id={{ task.id }}">Réactiver</a>
+            {% else %}
+                <a href="/projet-php/public/task/toggleCompletion?id={{ task.id }}">Terminer</a>
+            {% endif %}
+            <a href="/projet-php/public/task/edit?id={{ task.id }}">Modifier</a>
+            <a href="/projet-php/public/task/delete?id={{ task.id }}">Supprimer</a>
+        </li>
+    {% else %}
+        <li>Aucune tâche à afficher</li>
+    {% endfor %}
+</ul>
+<a href="/projet-php/public/task/add">Ajouter une tâche</a>
+
+
+

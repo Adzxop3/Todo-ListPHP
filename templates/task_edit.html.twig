@@ -1,0 +1,23 @@
+<h1>Modifier une tâche</h1>
+<form method="POST" action="/projet-php/public/task/edit?id={{ task.id }}">
+    <label for="title">Titre :</label>
+    <input type="text" id="title" name="title" value="{{ task.title }}" required>
+
+    <label for="priority">Priorité :</label>
+    <select id="priority" name="priority">
+        <option value="low" {% if task.priority == 'low' %}selected{% endif %}>Basse</option>
+        <option value="medium" {% if task.priority == 'medium' %}selected{% endif %}>Moyenne</option>
+        <option value="high" {% if task.priority == 'high' %}selected{% endif %}>Haute</option>
+    </select>
+
+    <label for="recurrence">Récurrence :</label>
+    <select id="recurrence" name="recurrence">
+        <option value="none" {% if task.recurrence == 'none' %}selected{% endif %}>Aucune</option>
+        <option value="daily" {% if task.recurrence == 'daily' %}selected{% endif %}>Quotidienne</option>
+        <option value="weekly" {% if task.recurrence == 'weekly' %}selected{% endif %}>Hebdomadaire</option>
+        <option value="monthly" {% if task.recurrence == 'monthly' %}selected{% endif %}>Mensuelle</option>
+    </select>
+
+    <button type="submit">Enregistrer</button>
+</form>
+<a href="/projet-php/public/task/list">Retour à la liste</a>
